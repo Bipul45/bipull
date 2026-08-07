@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Bharti ❤️</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- Floating Hearts -->
+<div class="hearts"></div>
+
+<!-- ================= PASSWORD PAGE ================= -->
+
+<section class="page active" id="page1">
+
+<div class="gif">
+<img src="assets/gifs/lock.gif">
+</div>
+
+<h2>Enter Password</h2>
+
+<input
+type="password"
+id="password"
+readonly
+placeholder="••••"
+/>
+
+<div class="calculator">
+
+<button onclick="press('1')">1</button>
+<button onclick="press('2')">2</button>
+<button onclick="press('3')">3</button>
+
+<button onclick="press('4')">4</button>
+<button onclick="press('5')">5</button>
+<button onclick="press('6')">6</button>
+
+<button onclick="press('7')">7</button>
+<button onclick="press('8')">8</button>
+<button onclick="press('9')">9</button>
+
+<button onclick="clearPass()">C</button>
+<button onclick="press('0')">0</button>
+<button onclick="checkPassword()">OK</button>
+
+</div>
+
+<p id="error"></p>
+
+</section>
+
+<!-- ================= PAGE 2 ================= -->
+
+<section class="page" id="page2">
+
+<div class="gif">
+<img src="assets/gifs/birthday.gif">
+</div>
+
+<h1 id="typing1"></h1>
+
+<button onclick="nextPage(3)">
+Next
+</button>
+
+</section>
+
+<!-- ================= PAGE 3 ================= -->
+
+<section class="page" id="page3">
+
+<div class="gif">
+<img src="assets/gifs/cute.gif">
+</div>
+
+<h2 id="typing2"></h2>
+
+<button onclick="nextPage(4)">
+Next
+</button>
+
+</section>
+
+<!-- ================= PAGE 4 ================= -->
+
+<section class="page" id="page4">
+
+<img
+class="cake"
+src="assets/gifs/cake.gif"
+>
+
+<button onclick="nextPage(5)">
+Next
+</button>
+
+</section>
+
+<!-- ================= PAGE 5 ================= -->
+
+<section class="page" id="page5">
+
+<div class="gif">
+<img src="assets/gifs/love.gif">
+</div>
+
+<h2>Wishes</h2>
+
+<div class="envelope">
+
+<img
+src="assets/images/envelope.png"
+id="envelope"
+>
+
+<button onclick="openLetter()">
+Open It
+</button>
+
+</div>
+
+<div id="wishBox">
+
+<p id="typing3"></p>
+
+<button onclick="nextPage(6)">
+Next
+</button>
+
+</div>
+
+</section>
+
+<!-- ================= PAGE 6 ================= -->
+
+<section class="page" id="page6">
+
+<div class="gif">
+<img src="assets/gifs/calendar.gif">
+</div>
+
+<h1>13 • 08 • 2026</h1>
+
+<button onclick="nextPage(7)">
+Next
+</button>
+
+</section>
+
+<!-- ================= PAGE 7 ================= -->
+
+<section class="page" id="page7">
+
+<div class="gif">
+<img src="assets/gifs/music.gif">
+</div>
+
+<img
+class="musicIcon"
+src="assets/images/music.png"
+onclick="playSong()"
+>
+
+<p>Tap Music Icon ❤️</p>
+
+<button onclick="nextPage(8)">
+Next
+</button>
+
+<audio id="song">
+<source src="assets/song.mp3">
+</audio>
+
+</section>
+
+<!-- ================= PAGE 8 ================= -->
+
+<section class="page" id="page8">
+
+<div class="gif">
+<img src="assets/gifs/memory.gif">
+</div>
+
+<h2>Memories</h2>
+
+<div class="gallery">
+
+<img src="assets/images/1.jpg" onclick="openImage(0)">
+<img src="assets/images/2.jpg" onclick="openImage(1)">
+<img src="assets/images/3.jpg" onclick="openImage(2)">
+<img src="assets/images/4.jpg" onclick="openImage(3)">
+<img src="assets/images/5.jpg" onclick="openImage(4)">
+
+</div>
+
+<button onclick="nextPage(9)">
+Next
+</button>
+
+</section>
+
+<!-- ================= PAGE 9 ================= -->
+
+<section class="page" id="page9">
+
+<div class="gif">
+<img src="assets/gifs/final.gif">
+</div>
+
+<h1 id="typing4"></h1>
+
+<h3>Made with ❤️ by Bipul</h3>
+
+</section>
+
+<!-- Full Screen Image Viewer -->
+
+<div id="viewer">
+
+<span onclick="closeViewer()">✖</span>
+
+<button onclick="prevImage()">◀</button>
+
+<img id="fullImage">
+
+<button onclick="nextImageView()">▶</button>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
