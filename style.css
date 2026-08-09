@@ -159,3 +159,89 @@ body{
         line-height:1.7;
     }
 }
+
+/* =========================
+   PREMIUM NEXT BUTTON
+========================= */
+
+.page > button,
+#wishBox > button {
+    border: none;
+    outline: none;
+
+    min-width: 130px;
+    height: 52px;
+
+    padding: 0 30px;
+    margin-top: 25px;
+
+    border-radius: 50px;
+
+    background: linear-gradient(
+        135deg,
+        #ff4f91,
+        #ff2f78
+    );
+
+    color: white;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+
+    letter-spacing: .5px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(255, 47, 120, .45),
+        inset 0 1px 2px rgba(255,255,255,.35);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+}
+
+/* Hover */
+.page > button:hover,
+#wishBox > button:hover {
+
+    transform: translateY(-4px) scale(1.04);
+
+    box-shadow:
+        0 14px 35px rgba(255, 47, 120, .65),
+        0 0 25px rgba(255, 105, 170, .35);
+}
+
+/* Click */
+.page > button:active,
+#wishBox > button:active {
+
+    transform: scale(.94);
+
+    box-shadow:
+        0 5px 15px rgba(255, 47, 120, .4);
+}
+
+/* Little arrow */
+.page > button::after,
+#wishBox > button::after {
+    content: " →";
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+/* Mobile */
+@media(max-width:500px){
+
+    .page > button,
+    #wishBox > button {
+
+        min-width: 125px;
+        height: 50px;
+
+        font-size: 17px;
+        padding: 0 26px;
+    }
+}
