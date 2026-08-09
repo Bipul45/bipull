@@ -209,27 +209,59 @@ Next
 
 <!-- ================= PAGE 8 ================= -->
 
+<!-- ================= MEMORY PAGE ================= -->
+
 <section class="page" id="page9">
 
-<div class="gif">
-<img src="assets/gifs/memory.gif">
-</div>
+    <!-- Top GIF -->
+    <div class="gif">
+        <img src="assets/gifs/memory.gif" alt="Memories">
+    </div>
 
-<h2>Memories</h2>
+    <h2>Memories ❤️</h2>
 
-<div class="gallery">
+    <!-- Pick Button -->
+    <button class="pick-button" onclick="openMemories()">
+        📸 Pick a Memory
+    </button>
 
-<img src="assets/images/1.jpg" onclick="openImage(0)">
-<img src="assets/images/2.jpg" onclick="openImage(1)">
-<img src="assets/images/3.jpg" onclick="openImage(2)">
-<img src="assets/images/4.jpg" onclick="openImage(3)">
-<img src="assets/images/5.jpg" onclick="openImage(4)">
+    <!-- Memory Viewer -->
+    <div id="memoryViewer">
 
-</div>
+        <button class="memory-close" onclick="closeMemories()">
+            ✕
+        </button>
 
-<button onclick="nextPage(9)">
-Next
-</button>
+        <button class="memory-arrow left"
+                onclick="previousMemory()">
+            ←
+        </button>
+
+        <div class="memory-photo-box">
+
+            <img
+                id="memoryPhoto"
+                src="assets/images/1.jpg"
+                alt="Memory"
+            >
+
+            <p id="memoryNumber">
+                Memory 1 / 5
+            </p>
+
+        </div>
+
+        <button class="memory-arrow right"
+                onclick="nextMemory()">
+            →
+        </button>
+
+    </div>
+
+    <!-- Next Main Page -->
+    <button onclick="nextPage(10)">
+        Next
+    </button>
 
 </section>
 
