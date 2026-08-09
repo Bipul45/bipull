@@ -1007,3 +1007,181 @@ button:active {
     }
 
 }
+
+/* =========================================
+   FINAL PAGE CARD
+========================================= */
+
+#page10{
+    width:100% !important;
+    min-height:100dvh !important;
+
+    padding:20px !important;
+
+    margin:0 !important;
+
+    border:none !important;
+    background:transparent !important;
+
+    box-shadow:none !important;
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+}
+
+#page10.active{
+    display:flex !important;
+}
+
+
+/* THE ACTUAL BOX */
+
+#page10 .final-card{
+
+    width:min(88vw, 600px);
+
+    min-height:420px;
+
+    padding:35px 25px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    border-radius:32px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(35,20,75,.94),
+            rgba(15,10,45,.94)
+        );
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+        0 0 25px rgba(70,90,255,.75),
+        0 0 60px rgba(190,50,255,.4),
+        inset 0 0 30px rgba(255,70,180,.08);
+
+    backdrop-filter:blur(12px);
+
+    -webkit-backdrop-filter:blur(12px);
+
+    animation:finalCardIn .7s ease;
+}
+
+
+@keyframes finalCardIn{
+
+    from{
+        opacity:0;
+        transform:scale(.9);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+
+}
+
+
+/* FINAL GIF */
+
+#page10 .gif{
+
+    width:170px;
+    height:170px;
+
+    margin-bottom:15px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+}
+
+#page10 .gif img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:contain;
+}
+
+
+/* FINAL HEADING */
+
+#page10 h1{
+
+    margin:10px 0 15px;
+
+    color:white;
+
+    font-size:36px;
+
+    line-height:1.25;
+
+    text-shadow:
+        0 0 12px rgba(255,100,190,.8),
+        0 0 30px rgba(255,50,170,.35);
+}
+
+
+/* FINAL CREDIT */
+
+#page10 p{
+
+    margin:0;
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    opacity:.95;
+}
+
+
+/* MOBILE */
+
+@media(max-width:500px){
+
+    #page10 .final-card{
+
+        width:90vw;
+
+        min-height:400px;
+
+        padding:28px 18px;
+
+        border-radius:28px;
+    }
+
+    #page10 .gif{
+
+        width:140px;
+        height:140px;
+    }
+
+    #page10 h1{
+
+        font-size:28px;
+    }
+
+    #page10 p{
+
+        font-size:16px;
+    }
+
+}
