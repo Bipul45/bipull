@@ -881,3 +881,97 @@ heart.remove();
 },5000);
 
 },350);
+
+// =================================
+// MEMORY SYSTEM
+// =================================
+
+const memoryImages = [
+    "assets/images/1.jpg",
+    "assets/images/2.jpg",
+    "assets/images/3.jpg",
+    "assets/images/4.jpg",
+    "assets/images/5.jpg"
+];
+
+let memoryIndex = 0;
+
+
+// Open Memory Viewer
+function openMemories(){
+
+    memoryIndex = 0;
+
+    const viewer = document.getElementById("memoryViewer");
+
+    viewer.classList.add("show");
+
+    showMemory();
+
+}
+
+
+// Show Current Memory
+function showMemory(){
+
+    const photo = document.getElementById("memoryPhoto");
+
+    const number = document.getElementById("memoryNumber");
+
+    photo.style.animation = "none";
+
+    void photo.offsetWidth;
+
+    photo.style.animation = "photoChange .35s ease";
+
+    photo.src = memoryImages[memoryIndex];
+
+    number.innerHTML =
+        "Memory " +
+        (memoryIndex + 1) +
+        " / " +
+        memoryImages.length;
+
+}
+
+
+// Next Memory
+function nextMemory(){
+
+    memoryIndex++;
+
+    if(memoryIndex >= memoryImages.length){
+
+        memoryIndex = 0;
+
+    }
+
+    showMemory();
+
+}
+
+
+// Previous Memory
+function previousMemory(){
+
+    memoryIndex--;
+
+    if(memoryIndex < 0){
+
+        memoryIndex = memoryImages.length - 1;
+
+    }
+
+    showMemory();
+
+}
+
+
+// Close Memory Viewer
+function closeMemories(){
+
+    document
+        .getElementById("memoryViewer")
+        .classList.remove("show");
+
+}
