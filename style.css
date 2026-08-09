@@ -866,3 +866,102 @@ button:active {
 #page9 button[onclick="nextPage(10)"]:active{
     transform:scale(.95) !important;
 }
+
+/* =========================================
+   PREMIUM BOX FOR ALL PAGES
+========================================= */
+
+.page{
+    position:relative;
+}
+
+/* Every normal page gets a centered card */
+.page::before{
+    content:"";
+
+    position:absolute;
+
+    width:min(88vw, 620px);
+    height:min(82vh, 760px);
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%, -50%);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(35,20,75,.88),
+            rgba(15,10,45,.82)
+        );
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:32px;
+
+    box-shadow:
+        0 0 25px rgba(70,90,255,.65),
+        0 0 65px rgba(180,50,255,.35),
+        inset 0 0 35px rgba(255,70,180,.08);
+
+    backdrop-filter:blur(12px);
+
+    -webkit-backdrop-filter:blur(12px);
+
+    z-index:0;
+
+    pointer-events:none;
+}
+
+
+/* Put page content above card */
+
+.page > *{
+    position:relative;
+    z-index:2;
+}
+
+
+/* =========================================
+   BOX HEIGHT FOR DIFFERENT PAGES
+========================================= */
+
+#page1::before{
+    height:min(88vh, 760px);
+}
+
+#page5::before{
+    height:min(88vh, 800px);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:500px){
+
+    .page::before{
+
+        width:91vw;
+
+        height:84vh;
+
+        border-radius:28px;
+
+        box-shadow:
+            0 0 20px rgba(70,90,255,.55),
+            0 0 45px rgba(180,50,255,.3),
+            inset 0 0 25px rgba(255,70,180,.08);
+    }
+
+    #page1::before{
+        height:88vh;
+    }
+
+    #page5::before{
+        height:88vh;
+    }
+
+}
