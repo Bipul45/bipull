@@ -664,7 +664,7 @@ nextPage=function(page){
 
 oldNext(page);
 
-if(page==9){
+if(page==10){
 
 showFinal();
 
