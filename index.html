@@ -211,59 +211,84 @@ Next
 
 <!-- ================= MEMORY PAGE ================= -->
 
+<!-- ================= MEMORY PAGE ================= -->
+
 <section class="page" id="page9">
 
-    <!-- Top GIF -->
-    <div class="gif">
-        <img src="assets/gifs/memory.gif" alt="Memories">
-    </div>
+    <div class="memory-card">
 
-    <h2>Memories ❤️</h2>
+        <h1 class="memory-title">
+            Some Image ✨
+        </h1>
 
-    <!-- Pick Button -->
-    <button class="pick-button" onclick="openMemories()">
-        📸 Pick a Memory
-    </button>
-
-    <!-- Memory Viewer -->
-    <div id="memoryViewer">
-
-        <button class="memory-close" onclick="closeMemories()">
-            ✕
-        </button>
-
-        <button class="memory-arrow left"
-                onclick="previousMemory()">
-            ←
-        </button>
-
-        <div class="memory-photo-box">
+        <div class="memory-grid">
 
             <img
-                id="memoryPhoto"
                 src="assets/images/1.jpg"
-                alt="Memory"
+                onclick="openMemory(0)"
+                alt="Memory 1"
             >
 
-            <p id="memoryNumber">
-                Memory 1 / 5
-            </p>
+            <img
+                src="assets/images/2.jpg"
+                onclick="openMemory(1)"
+                alt="Memory 2"
+            >
+
+            <img
+                src="assets/images/3.jpg"
+                onclick="openMemory(2)"
+                alt="Memory 3"
+            >
+
+            <img
+                src="assets/images/4.jpg"
+                onclick="openMemory(3)"
+                alt="Memory 4"
+            >
 
         </div>
 
-        <button class="memory-arrow right"
-                onclick="nextMemory()">
-            →
+        <button onclick="nextPage(10)">
+            Next →
         </button>
 
     </div>
 
-    <!-- Next Main Page -->
-    <button onclick="nextPage(10)">
-        Next
-    </button>
-
 </section>
+
+
+<!-- ================= SINGLE MEMORY VIEW ================= -->
+
+<div id="singleMemory">
+
+    <div class="single-memory-card">
+
+        <h1>
+            Memory ✨
+        </h1>
+
+        <img
+            id="singleMemoryImage"
+            src=""
+            alt="Memory"
+        >
+
+        <button onclick="previousMemory()">
+            ← Back
+        </button>
+
+        <button onclick="nextMemory()">
+            Next →
+        </button>
+
+        <button onclick="closeMemory()">
+            ✕ Close
+        </button>
+
+    </div>
+
+</div>
 
 <!-- ================= PAGE 9 ================= -->
 
