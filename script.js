@@ -882,96 +882,91 @@ heart.remove();
 
 },350);
 
-// =================================
-// MEMORY SYSTEM
-// =================================
+// ==========================================
+// MEMORY GALLERY
+// ==========================================
 
 const memoryImages = [
     "assets/images/1.jpg",
     "assets/images/2.jpg",
     "assets/images/3.jpg",
-    "assets/images/4.jpg",
-    "assets/images/5.jpg"
+    "assets/images/4.jpg"
 ];
 
-let memoryIndex = 0;
+let currentMemory = 0;
 
 
-// Open Memory Viewer
-function openMemories(){
+// OPEN PHOTO
+function openMemory(index){
 
-    memoryIndex = 0;
+    currentMemory = index;
 
-    const viewer = document.getElementById("memoryViewer");
+    const viewer =
+        document.getElementById("singleMemory");
 
     viewer.classList.add("show");
 
-    showMemory();
+    showCurrentMemory();
 
 }
 
 
-// Show Current Memory
-function showMemory(){
+// SHOW CURRENT PHOTO
+function showCurrentMemory(){
 
-    const photo = document.getElementById("memoryPhoto");
+    const image =
+        document.getElementById("singleMemoryImage");
 
-    const number = document.getElementById("memoryNumber");
+    image.style.animation = "none";
 
-    photo.style.animation = "none";
+    void image.offsetWidth;
 
-    void photo.offsetWidth;
+    image.src = memoryImages[currentMemory];
 
-    photo.style.animation = "photoChange .35s ease";
-
-    photo.src = memoryImages[memoryIndex];
-
-    number.innerHTML =
-        "Memory " +
-        (memoryIndex + 1) +
-        " / " +
-        memoryImages.length;
+    image.style.animation =
+        "photoIn .35s ease";
 
 }
 
 
-// Next Memory
+// NEXT PHOTO
 function nextMemory(){
 
-    memoryIndex++;
+    currentMemory++;
 
-    if(memoryIndex >= memoryImages.length){
+    if(currentMemory >= memoryImages.length){
 
-        memoryIndex = 0;
+        currentMemory = 0;
 
     }
 
-    showMemory();
+    showCurrentMemory();
 
 }
 
 
-// Previous Memory
+// PREVIOUS PHOTO
 function previousMemory(){
 
-    memoryIndex--;
+    currentMemory--;
 
-    if(memoryIndex < 0){
+    if(currentMemory < 0){
 
-        memoryIndex = memoryImages.length - 1;
+        currentMemory =
+            memoryImages.length - 1;
 
     }
 
-    showMemory();
+    showCurrentMemory();
 
 }
 
 
-// Close Memory Viewer
-function closeMemories(){
+// CLOSE PHOTO
+function closeMemory(){
 
     document
-        .getElementById("memoryViewer")
+        .getElementById("singleMemory")
         .classList.remove("show");
 
 }
