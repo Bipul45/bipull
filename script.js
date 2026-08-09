@@ -425,17 +425,29 @@ isPlaying=false;
 // AUTO PLAY AFTER CLICK
 //-------------------------
 
-document.body.addEventListener("click",function(){
+function playSong(){
 
-const song=document.getElementById("song");
+    const song = document.getElementById("song");
+    const status = document.getElementById("musicStatus");
 
-if(song.paused && isPlaying){
+    if(song.paused){
 
-song.play().catch(()=>{});
+        song.play()
+        .then(() => {
+            status.innerHTML = "🎵 Playing... ❤️";
+        })
+        .catch((error) => {
+            status.innerHTML = "Tap again to play 🎵";
+            console.log(error);
+        });
 
+    }else{
+
+        song.pause();
+        status.innerHTML = "⏸️ Paused";
+
+    }
 }
-
-});
 
 //-------------------------
 // GLOW EFFECT
