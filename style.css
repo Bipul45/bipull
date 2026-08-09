@@ -769,3 +769,50 @@ button:active {
     }
 
 }
+
+/* Memory page Next button */
+
+.memory-card > button{
+    display:block;
+
+    width:100%;
+    max-width:600px;
+
+    height:58px;
+
+    margin:25px auto 0 !important;
+
+    border:none !important;
+    border-radius:50px !important;
+
+    background:linear-gradient(
+        90deg,
+        #ff426f,
+        #b84dff
+    ) !important;
+
+    color:#fff !important;
+
+    font-size:19px !important;
+    font-weight:600 !important;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 8px 25px rgba(255,50,150,.4) !important;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.memory-card > button:hover{
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 12px 35px rgba(255,50,160,.55) !important;
+}
+
+.memory-card > button:active{
+    transform:scale(.96);
+}
