@@ -1,282 +1,161 @@
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    min-height:100%;
+    margin:0;
+    font-family:'Poppins',sans-serif;
 }
 
 body{
-background:linear-gradient(135deg,#1f1147,#ff4d8d);
-overflow:hidden;
-color:#fff;
+    background:linear-gradient(135deg,#1f1147,#ff4d8d);
+    color:#fff;
+    overflow-x:hidden;
 }
 
+/* Every page */
 .page{
-display:none;
-height:100vh;
-width:100%;
-padding:25px;
-text-align:center;
-justify-content:center;
-align-items:center;
-flex-direction:column;
+    display:none;
+    width:100%;
+    min-height:100dvh;
+    padding:20px 18px;
+    text-align:center;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    position:relative;
 }
 
 .page.active{
-display:flex;
-animation:fade .8s;
+    display:flex;
+    animation:fade .6s ease;
 }
 
-@keyframes fade{
-from{
-opacity:0;
-transform:translateY(30px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
+/* Password page */
+#page1{
+    justify-content:flex-start;
+    padding-top:35px;
+    padding-bottom:25px;
 }
 
-h1{
-font-size:34px;
-font-weight:700;
-margin-top:20px;
-}
-
-h2{
-font-size:28px;
-margin:15px 0;
-}
-
-h3{
-margin-top:20px;
-font-weight:400;
-}
-
-p{
-font-size:18px;
-line-height:28px;
+/* GIF */
+.gif{
+    width:170px;
+    height:170px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:10px;
 }
 
 .gif img{
-width:180px;
-height:180px;
-object-fit:contain;
-margin-bottom:15px;
+    width:100%;
+    height:100%;
+    object-fit:contain;
 }
 
-.cake{
-width:280px;
-max-width:90%;
+/* Password heading */
+#page1 h2{
+    margin:5px 0 12px;
 }
 
-button{
-margin-top:30px;
-padding:14px 35px;
-border:none;
-border-radius:40px;
-background:#ff4d8d;
-color:#fff;
-font-size:18px;
-font-weight:600;
-cursor:pointer;
-transition:.3s;
-box-shadow:0 10px 25px rgba(0,0,0,.3);
+/* Password box */
+#password{
+    width:230px;
+    height:55px;
+    margin:8px 0 18px;
+    border:none;
+    border-radius:18px;
+    text-align:center;
+    font-size:25px;
+    outline:none;
 }
 
-button:hover{
-transform:scale(1.08);
-}
-
-input{
-width:220px;
-height:50px;
-border:none;
-border-radius:15px;
-text-align:center;
-font-size:25px;
-margin:20px 0;
-outline:none;
-}
-
+/* Calculator */
 .calculator{
-display:grid;
-grid-template-columns:repeat(3,70px);
-gap:15px;
-justify-content:center;
+    display:grid;
+    grid-template-columns:repeat(3,70px);
+    gap:10px;
+    justify-content:center;
 }
 
 .calculator button{
-width:70px;
-height:70px;
-padding:0;
-border-radius:18px;
-font-size:22px;
-background:#ffffff22;
-backdrop-filter:blur(10px);
+    width:70px;
+    height:60px;
+    margin:0;
+    padding:0;
+    border-radius:18px;
+    font-size:22px;
 }
 
-.calculator button:hover{
-background:#ff4d8d;
+/* Normal buttons */
+.page > button{
+    margin-top:20px;
 }
 
-#error{
-margin-top:15px;
-color:#ffe66d;
-font-size:17px;
+/* Wishes page can scroll */
+#page5{
+    min-height:100dvh;
+    justify-content:flex-start;
+    padding-top:25px;
+    padding-bottom:40px;
+    overflow-y:auto;
 }
 
-.envelope{
-margin-top:25px;
-}
-
-.envelope img{
-width:180px;
-cursor:pointer;
-transition:.4s;
-}
-
-.envelope img:hover{
-transform:scale(1.1);
-}
-
+/* Wish text */
 #wishBox{
-display:none;
-margin-top:25px;
+    width:100%;
+    max-width:500px;
+    margin-top:25px;
+    padding:0 5px 30px;
 }
 
-.musicIcon{
-width:120px;
-cursor:pointer;
-transition:.4s;
+#typing3{
+    font-size:20px;
+    line-height:1.75;
+    white-space:pre-line;
+    overflow-wrap:break-word;
 }
 
-.musicIcon:hover{
-transform:rotate(15deg) scale(1.1);
-}
-
-.gallery{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:15px;
-margin-top:20px;
-}
-
-.gallery img{
-width:100%;
-height:140px;
-object-fit:cover;
-border-radius:15px;
-cursor:pointer;
-transition:.4s;
-}
-
-.gallery img:hover{
-transform:scale(1.05);
-}
-
-#viewer{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:#000d;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-z-index:100;
-}
-
-#viewer img{
-width:90%;
-max-width:380px;
-border-radius:15px;
-}
-
-#viewer span{
-position:absolute;
-top:25px;
-right:25px;
-font-size:35px;
-cursor:pointer;
-}
-
-#viewer button{
-margin:10px;
-}
-
-.hearts{
-position:fixed;
-left:0;
-top:0;
-width:100%;
-height:100%;
-pointer-events:none;
-overflow:hidden;
-}
-
-.hearts::before,
-.hearts::after{
-content:"❤️ ❤️ 💖 💕";
-position:absolute;
-font-size:30px;
-animation:heartMove 10s linear infinite;
-opacity:.4;
-}
-
-.hearts::after{
-left:60%;
-animation-duration:14s;
-}
-
-@keyframes heartMove{
-0%{
-transform:translateY(100vh);
-}
-100%{
-transform:translateY(-120vh);
-}
-}
-
+/* Mobile */
 @media(max-width:500px){
 
-h1{
-font-size:28px;
-}
+    .page{
+        padding-left:15px;
+        padding-right:15px;
+    }
 
-h2{
-font-size:23px;
-}
+    #page1{
+        padding-top:20px;
+    }
 
-.gif img{
-width:150px;
-height:150px;
-}
+    .gif{
+        width:145px;
+        height:145px;
+    }
 
-.cake{
-width:240px;
-}
+    #password{
+        width:230px;
+        height:52px;
+    }
 
-button{
-font-size:17px;
-padding:13px 28px;
-}
+    .calculator{
+        grid-template-columns:repeat(3,68px);
+        gap:9px;
+    }
 
-.gallery img{
-height:120px;
-}
+    .calculator button{
+        width:68px;
+        height:58px;
+    }
 
-.calculator{
-grid-template-columns:repeat(3,65px);
-gap:12px;
-}
-
-.calculator button{
-width:65px;
-height:65px;
-}
-
+    #typing3{
+        font-size:18px;
+        line-height:1.7;
+    }
 }
