@@ -15,7 +15,7 @@ body{
 body{
     background:linear-gradient(135deg,#1f1147,#ff4d8d);
     color:#fff;
-    overflow-x:hidden;
+    overflow-x:auto;
 }
 
 /* Every page */
