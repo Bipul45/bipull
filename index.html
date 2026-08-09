@@ -161,25 +161,25 @@ Next
 
 <section class="page" id="page7">
 
-<div class="gif">
-<img src="assets/gifs/music.gif">
-</div>
+    <div class="gif">
+        <img src="assets/gifs/music.gif" alt="Music">
+    </div>
 
-<img
-class="musicIcon"
-src="assets/images/music.png"
-onclick="playSong()"
->
+    <h2>Our Song 🎵❤️</h2>
 
-<p>Tap Music Icon ❤️</p>
+    <button class="music-button" onclick="playSong()">
+        🎵 Play Song
+    </button>
 
-<button onclick="nextPage(8)">
-Next
-</button>
+    <p id="musicStatus">Tap to play ❤️</p>
 
-<audio id="song">
-<source src="assets/song.mp3">
-</audio>
+    <audio id="song" preload="auto">
+        <source src="assets/song.mp3" type="audio/mpeg">
+    </audio>
+
+    <button onclick="nextPage(8)">
+        Next
+    </button>
 
 </section>
 
